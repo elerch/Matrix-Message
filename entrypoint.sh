@@ -9,7 +9,7 @@ structure_message() {
 
 # send_message $body (json formatted) $room_id $access_token
 send_message() {
-  out="$(curl -XPOST -d "$1" "https://$INPUT_SERVER/_matrix/client/r0/rooms/$2/send/m.room.message?access_token=$3")"
+  out="$(curl -s -XPOST -d "$1" "$INPUT_SERVER/_matrix/client/r0/rooms/$2/send/m.room.message?access_token=$3")"
   if [ "$(echo "$out" | jq .errcode)" = "null" ]; then
     echo "[+] Message sent!"
   else
