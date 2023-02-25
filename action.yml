@@ -4,7 +4,7 @@ author: Martin Pugh (pugh@s3kr.it)
 inputs:
   server:
     description: "Matrix server hostname"
-    default: "matrix.org"
+    default: "https://matrix.org"
     required: false
   room_id:
     description: "Matrix room ID, specified in channels advanced settings"
